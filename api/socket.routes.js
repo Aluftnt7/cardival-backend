@@ -16,7 +16,6 @@ function connectSockets(io) {
         socket.on('entering-room', roomId => {   
             if (socket.roomTopic) {
                 socket.leave(socket.roomTopic)
-                console.log('now');
             }
             socket.join(roomId)
             socket.roomTopic = roomId;
