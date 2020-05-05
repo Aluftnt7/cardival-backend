@@ -11,7 +11,7 @@ function connectSockets(io) {
         socket.on('card move', ({card, locX, locY}) =>{
             console.log(locX, '', locY);
             
-            io.to(socket.roomTopic).emit('card moved', {card, locX, locY})
+            socket.to(socket.roomTopic).emit('card moved', {card, locX, locY})
 
             
         })
